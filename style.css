@@ -7,16 +7,29 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 h1, h2, h3 {
     font-family: "Oswald", sans-serif;
     margin-bottom: 1em;
     font-size: 2em;
+    max-width: 80vw;
 }
 
 section {
     color: #FFF;
+    scroll-snap-align: start;
+}
+
+p {
+    width: 80vw;
+    line-height: 1.25;
+    text-align: justify;
+}
+
+p#author {
+    text-align: center;
 }
 
 .parallax {
@@ -32,7 +45,6 @@ section {
     background-size: cover;
     min-height: 100vh;
     font-size: 2em;
-    border-bottom: 2px solid #FFF;
 }
 
 header {
@@ -102,6 +114,8 @@ button {
     background-image: url("./img/backgrounds/williams_aston.webp");
 }
 
-#section11 {
-    border: none;
+@media (max-width: 768px) {
+    .parallax {
+        font-size: 1em;
+    }
 }
