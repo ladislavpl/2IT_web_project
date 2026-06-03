@@ -6,18 +6,17 @@
 }
 
 html {
-    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-}
-
-section {
-    scroll-snap-align: start;
 }
 
 h1, h2, h3 {
     font-family: "Oswald", sans-serif;
     margin-bottom: 1em;
     font-size: 2em;
+}
+
+section {
+    color: #FFF;
 }
 
 .parallax {
@@ -33,10 +32,11 @@ h1, h2, h3 {
     background-size: cover;
     min-height: 100vh;
     font-size: 2em;
+    border-bottom: 2px solid #FFF;
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 100;
     width: 100%;
@@ -44,14 +44,64 @@ header {
     justify-content: center;
     gap: 1em;
     padding: 1em;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 header a {
-    color: black;
+    color: #FFF;
     text-decoration: none;
 }
 
 header a:hover {
     text-decoration: underline;
+}
+
+.imgcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.imgcontainer img {
+    width: 50vw;
+}
+
+button {
+    width: 2em;
+    height: 2em;
+}
+
+#section11 h2 {
+    margin: 0;
+}
+
+#section1, #section2, #section3, #section9, #section10, #section11 {
+    background-image: url("./img/backgrounds/main.webp");
+}
+
+#section4 {
+    background-image: url("./img/backgrounds/mercedes.webp");
+}
+
+#section5 {
+    background-image: url("./img/backgrounds/ferrari.webp");
+}
+
+#section6 {
+    background-image: url("./img/backgrounds/mclaren.webp");
+}
+
+#section7 {
+    background-image: url("./img/backgrounds/redbull.webp");
+}
+
+#section8 {
+    background-image: url("./img/backgrounds/williams_aston.webp");
+}
+
+#section11 {
+    border: none;
 }
