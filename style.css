@@ -54,6 +54,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1em;
     padding: 1em;
     background-color: rgba(255, 255, 255, 0.1);
@@ -74,7 +75,6 @@ header a:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1em;
 }
 
 .imgcontainer img {
@@ -82,8 +82,18 @@ header a:hover {
 }
 
 button {
-    width: 2em;
-    height: 2em;
+    line-height: 1;
+    width: 4rem;
+    height: 4rem;
+    background-color: #FFF;
+    color: #000;
+    border: none;
+    font-size: 3rem;
+}
+
+p#author a {
+    text-decoration: none;
+    color: #FFF;
 }
 
 #section11 h2 {
@@ -117,5 +127,21 @@ button {
 @media (max-width: 768px) {
     .parallax {
         font-size: 1em;
+    }
+
+    .imgcontainer img {
+        width: 70vw;
+    }
+
+    button {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    .parallax {
+        background-attachment: scroll;
     }
 }
