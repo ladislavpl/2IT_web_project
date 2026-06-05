@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ladislavpl.github.io/2IT_web_project/sitemap.xml

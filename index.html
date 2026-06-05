@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Fanouškovská stránka o Formuli 1">
     <meta name="keywords" content="F1, Formula, Formule">
     <meta name="author" content="Ladislav Jaromír Pleštil">
-    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="./img/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./img/favicons/favicon.svg" />
     <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="F1" />
     <link rel="manifest" href="./site.webmanifest" />
+
+    <!-- Open Graph meta tags -->
     <meta property="og:title" content="Formula 1">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ladislavpl.github.io/2IT_web_project/">
-    <meta property="og:image" content="https://ladislavpl.github.io/2IT_web_project/web-app-manifest-512x512.png">
+    <meta property="og:image" content="https://ladislavpl.github.io/2IT_web_project/img/favicons/web-app-manifest-512x512.png">
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
     <meta property="og:locale" content="cs_CZ">
     <meta property="og:description" content="Fanouškovská stránka o Formuli 1">
+
+    <!-- Twitter cards meta tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Formula 1">
     <meta name="twitter:description" content="Fanouškovská stránka o Formuli 1">
     <meta name="twitter:image" content="https://ladislavpl.github.io/2IT_web_project/img/backgrounds/main.png">
     <meta name="twitter:site" content="@_ladislavv_p_">
+
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <title>Formule 1</title>
 </head>
 <body>
     <header>
-        <a href="#section1">Úvod</a>
-        <a href="#section2">O F1</a>
-        <a href="#section3">Týmy</a>
-        <a href="#section9">Slovník pojmů</a>
-        <a href="#section10">Závěr</a>
+        <nav aria-label="Hlavní navigace">
+            <a href="#section1">Úvod</a>
+            <a href="#section2">O F1</a>
+            <a href="#section3">Týmy</a>
+            <a href="#section9">Slovník pojmů</a>
+            <a href="#section10">Závěr</a>
+        </nav>
     </header>
-    <main>
+    <main aria-label="Obsah stránky">
         <section class="parallax" id="section1">
             <h1>Formule 1</h1>
             <p>Vítejte ve světě, kde je i 300 kilometrů za hodinu pomalá rychlost v odbočce! Formula 1 je královnou motorsportu, přehlídkou nejmodernějších technologií, milionových rozpočtů a řidičů, kteří mají reflexy vycvičené lépe než ninja. Pokud hledáte rychlý přehled o tom, co se na tratích děje, zapněte si pásy – startujeme!</p>
@@ -96,11 +108,11 @@
         <section class="parallax" id="section11">
             <h2>Galerie</h2>
             <div class="imgcontainer">
-                <button onclick="prev()">&#8592;</button>
-                <img id="img" src="" alt="">
-                <button onclick="next()">&#8594;</button>
+                <button onclick="prev()" aria-label="Předchozí obrázek">&#8592;</button>
+                <img id="img" src="" alt="" loading="lazy">
+                <button onclick="next()" aria-label="Další obrázek">&#8594;</button>
             </div>
-            <div id="caption"></div>
+            <div id="caption" aria-live="polite"></div>
             <p id="author">Autor: <a href="//commons.wikimedia.org/wiki/User:Liauzh" title="User:Liauzh">Liauzh</a> – <span class="int-own-work" lang="cs">Vlastní dílo</span>, <a href="https://creativecommons.org/licenses/by/4.0" title="Creative Commons Attribution 4.0">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=186479106">Odkaz</a></p>
         </section>
     </main>

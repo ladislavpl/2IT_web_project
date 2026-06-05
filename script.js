@@ -18,7 +18,11 @@ const caption = document.getElementById('caption');
  
 function show() {
   img.src = images[i].src;
+  img.alt = images[i].caption;
   caption.textContent = images[i].caption;
+
+  const next = new Image();
+  next.src = images[(i + 1) % images.length].src;
 }
  
 function prev() { i = (i - 1 + images.length) % images.length; show(); }
