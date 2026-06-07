@@ -1,4 +1,4 @@
-document.querySelectorAll('header nav a').forEach(link => {
+document.querySelectorAll('header nav a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const target = document.querySelector(link.getAttribute('href'));
@@ -6,7 +6,8 @@ document.querySelectorAll('header nav a').forEach(link => {
 
     document.documentElement.style.scrollSnapType = 'none';
 
-    target.scrollIntoView({ behavior: 'smooth' });
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: prefersReduced ? 'instant' : 'smooth' });
 
     setTimeout(() => {
       document.documentElement.style.scrollSnapType = 'y mandatory';

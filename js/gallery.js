@@ -21,8 +21,8 @@ function show() {
   img.alt = images[i].caption;
   caption.textContent = images[i].caption;
 
-  const next = new Image();
-  next.src = images[(i + 1) % images.length].src;
+  const preload = new Image();
+  preload.src = images[(i + 1) % images.length].src;
 }
  
 function prev() { i = (i - 1 + images.length) % images.length; show(); }

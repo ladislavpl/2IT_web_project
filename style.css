@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Oswald";
-    src: url("./fonts/Oswald.ttf") format("truetype");
+    src: url("./fonts/Oswald.woff2") format("woff2");
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "Inter";
-    src: url("./fonts/Inter.ttf") format("truetype");
+    src: url("./fonts/Inter.woff2") format("woff2");
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -25,11 +25,11 @@
     box-sizing: border-box;
 }
 
-/* Scroll settings */
+/* Scroll snap */
 
 html {
-    scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 /* Header styles */
@@ -42,13 +42,15 @@ header {
     padding: 1em;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 header nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 2em;
+    font-size: 1.25em;
 }
 
 /* Section styles */
@@ -70,6 +72,19 @@ section {
     font-size: 2em;
 }
 
+section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+}
+
+section > * {
+    position: relative;
+    z-index: 1;
+}
+
 /* Text styles */
 
 h1, h2, h3 {
@@ -80,6 +95,10 @@ h1, h2, h3 {
     text-shadow: 5px 5px 10px #000;
 }
 
+#section11 h2 {
+    margin: 0;
+}
+
 p {
     width: 80vw;
     line-height: 1.25;
@@ -87,29 +106,38 @@ p {
     text-shadow: 5px 5px 10px #000;
 }
 
-p#author {
+p#author, p#caption {
     text-align: center;
 }
 
-header nav a, p#author a {
+a {
     color: #FFF;
     text-decoration: none;
 }
 
-header nav a:hover, p#author a:hover {
+a:hover {
     text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 3px solid #FFF;
+    outline-offset: 3px;
+}
+
+span {
+    font-family: inherit;
 }
 
 /* Gallery styles */
 
-.imgcontainer {
+.gallerycontainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
 
-.imgcontainer img {
+.gallerycontainer img {
     width: 50vw;
     border: 5px solid #FFF;
 }
@@ -126,6 +154,11 @@ button {
     touch-action: manipulation;
 }
 
+button:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+}
+
 button#left {
     margin-right: 1em;
     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.6);
@@ -134,10 +167,6 @@ button#left {
 button#right {
     margin-left: 1em;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
-}
-
-#section11 h2 {
-    margin: 0;
 }
 
 /* Background settings */
@@ -169,15 +198,21 @@ button#right {
 /* Mobile styles */
 
 @media (max-width: 768px) {
-    header nav a {
-        font-size: 0.8em;
+    header nav {
+        gap: 1em;
+        font-size: 1em;
+        flex-wrap: wrap;
+    }
+
+    p {
+        font-size: 1.1em;
     }
     
     section {
         font-size: 1em;
     }
 
-    .imgcontainer img {
+    .gallerycontainer img {
         width: 70vw;
     }
 
@@ -193,5 +228,11 @@ button#right {
 @supports (-webkit-touch-callout: none) {
     section {
         background-attachment: scroll;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 }
