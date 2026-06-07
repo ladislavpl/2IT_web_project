@@ -95,10 +95,6 @@ h1, h2, h3 {
     text-shadow: 5px 5px 10px #000;
 }
 
-#section11 h2 {
-    margin: 0;
-}
-
 p {
     width: 80vw;
     line-height: 1.25;
@@ -169,6 +165,10 @@ button#right {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
 }
 
+#section11 h2 {
+    margin: 0;
+}
+
 /* Background settings */
 
 #section1, #section2, #section3, #section9, #section10, #section11 {
@@ -230,6 +230,8 @@ button#right {
         background-attachment: scroll;
     }
 }
+
+/* Respect reduced motion setting */
 
 @media (prefers-reduced-motion: reduce) {
     html {
