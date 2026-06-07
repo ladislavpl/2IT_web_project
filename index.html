@@ -34,6 +34,11 @@
     <meta name="twitter:image" content="https://ladislavpl.github.io/2IT_web_project/img/backgrounds/main.png">
     <meta name="twitter:site" content="@_ladislavv_p_">
 
+    <!-- Preloading -->
+    <link rel="preload" href="./fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/Oswald.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" href="./img/backgrounds/main.webp">
+
     <link rel="stylesheet" href="style.css">
     <title>Formule 1 – Přehled týmů, jezdců a pojmů</title>
 </head>
@@ -129,8 +134,8 @@
 
     </main>
 
-    <script src="./js/snap.js"></script>
-    <script src="./js/gallery.js"></script>
+    <script src="./js/snap.js" defer></script>
+    <script src="./js/gallery.js" defer></script>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
