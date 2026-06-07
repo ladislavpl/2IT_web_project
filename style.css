@@ -200,8 +200,7 @@ button#right {
 @media (max-width: 768px) {
     header nav {
         gap: 1em;
-        font-size: 1em;
-        flex-wrap: wrap;
+        font-size: 0.80em;
     }
 
     p {
